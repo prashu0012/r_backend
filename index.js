@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from "body-parser";
 
-import Connection from './config/db.js';
+import Connection from './config/Db.js';
 
 import Jobs from './src/Routes/Jobs.route.js';
 import Internship from './src/Routes/Internship.route.js';
