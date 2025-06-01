@@ -5,4 +5,6 @@ const resumeSchema = new mongoose.Schema({
   uploadedAt: { type: Date, default: Date.now },
 });
 
-export default mongoose.model("Resume", resumeSchema);
+const Resume = mongoose.models.Resume || mongoose.model("Resume", resumeSchema);
+
+export default Resume;

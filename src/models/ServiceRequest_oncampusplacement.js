@@ -1,4 +1,3 @@
-// models/CampusPlacement.js
 import mongoose from "mongoose";
 
 const roundSchema = new mongoose.Schema({
@@ -34,9 +33,7 @@ const campusPlacementSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const CampusPlacement = mongoose.model(
-  "CampusPlacement",
-  campusPlacementSchema
-);
+// Only define the model if it doesn't already exist
+const CampusPlacement = mongoose.models.CampusPlacement || mongoose.model("CampusPlacement", campusPlacementSchema);
 
 export default CampusPlacement;

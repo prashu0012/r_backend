@@ -1,4 +1,3 @@
-// File: models/jobModel.js
 import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
@@ -71,7 +70,6 @@ const jobSchema = new Schema(
     postedBy: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      // required: true,
     },
     isActive: {
       type: Boolean,
@@ -86,6 +84,5 @@ const jobSchema = new Schema(
 // Full-text index for search
 jobSchema.index({ title: "text", description: "text" });
 
-const Job = model("Job", jobSchema);
-
+const Job = mongoose.models.Job || model("Job", jobSchema);
 export default Job;

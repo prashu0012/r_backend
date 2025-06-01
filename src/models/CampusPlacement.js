@@ -35,6 +35,7 @@ const campusPlacementSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-const CampusPlacement = mongoose.model("CampusPlacement", campusPlacementSchema);
+//  Fix: Avoid OverwriteModelError during hot-reloads or multiple imports
+const CampusPlacement = mongoose.models.CampusPlacement || mongoose.model("CampusPlacement", campusPlacementSchema);
 
 export default CampusPlacement;
