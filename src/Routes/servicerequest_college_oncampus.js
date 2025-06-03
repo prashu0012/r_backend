@@ -1,10 +1,10 @@
 // routes/placementRoutes.js
 import express from "express";
-import { registerPlacement } from "../controllers/servicerequest_college_oncampus.js";
+import { registerCampusPlacement } from "../controllers/campusPlacement.controller.js";
 
 const router = express.Router();
 
 // POST /api/placements/register
-router.post("/registeroncampus", registerPlacement);
+router.post("/registeroncampus", registerCampusPlacement);
 
 export default router;
